@@ -1,0 +1,24 @@
+name: EnderEconomy
+version: 0.1.0
+main: com.ender.economy.EnderEconomy
+api-version: '1.21'
+author: OpenAI
+description: Donut-SMP-inspired economy, auction house, stock exchange, and casino.
+commands:
+  ah: {description: Open the auction house}
+  sell: {description: Sell items through the server shop}
+  stocks: {description: Open the materials market and company exchange}
+  casino: {description: Open virtual casino games}
+  tpcasino: {description: Teleport to the physical casino}
+  pay: {description: Pay another player}
+  balance: {description: Check your balance, aliases: [bal]}
+  tpa: {description: Request to teleport to a player}
+  tpaccept: {description: Accept a teleport request}
+  tpdeny: {description: Deny a teleport request}
+  rtpa: {description: Random safe teleport}
+  rtps: {description: Random safe teleport near spawn}
+  spawn: {description: Teleport to world spawn}
+permissions:
+  endereconomy.admin:
+    description: Admin controls for EnderEconomy
+    default: op
