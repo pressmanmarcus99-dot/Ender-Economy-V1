@@ -1,0 +1,30 @@
+
+name: Build EnderEconomy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build plugin
+        run: mvn --batch-mode clean package
+
+      - name: Save plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: EnderEconomy-plugin
+          path: target/*.jar
